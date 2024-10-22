@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Online Quiz</h1>
+    <form method="POST" action="{{ url_for('quiz') }}">
+        {% for q_no, q in questions.items() %}
+        <div>
+            <h3>{{ q_no }}. {{ q.question }}</h3>
+            {% for option in q.options %}
+            <label>
+                <input type="radio" name="{{ q_no }}" value="{{ option }}" required> {{ option }}
+            </label>
+            <br>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form>
+</body>
+</html>
