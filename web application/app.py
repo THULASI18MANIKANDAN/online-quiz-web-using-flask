@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# 19 questions related to Python web development
 questions = {
     1: {"question": "What is Flask?", "options": ["A web framework", "A database", "A programming language", "A browser"], "answer": "A web framework"},
     2: {"question": "Which method is used to start the Flask server?", "options": ["run()", "start()", "execute()", "begin()"], "answer": "run()"},
